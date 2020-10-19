@@ -21,13 +21,10 @@
                 <div class="card card-style">
 				
 			
-               <img src="data/source/icons/exam_add.png">
+               <img src="data/source/icons/exam_add.png" class="img-fluid">
 			
                             
                 </div>      
 			
 		
-                <img src="data/source/icons/photo_hand.png" class="img-fluid" style="height:80%; margin-left:20%;">
-                            
-                
         
