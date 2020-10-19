@@ -40,9 +40,17 @@
 	
 	
 					
-<form method="POST" enctype="multipart/form-data" action="?page=exam_confirm&lokacija_id=<?php echo $lokacija_id; ?>" id="formular">
+				<form method="POST" enctype="multipart/form-data" action="?page=exam_confirm&lokacija_id=<?php echo $lokacija_id; ?>" id="formular">
 	
                 <div class="card card-style">
+				
+				<div class="d-flex justify-content-center id="preloader">
+                    <div class="spinner-border color-blue2-dark" role="status">
+                        <span class="sr-only">Loading...</span>
+                    </div>
+                </div>
+				
+				
 				
 				<input type="file" class="upload-file" accept="image/*" name="image" id="file"  onchange="loadFile(event)">
                  <div id="confirm" style="display: none; text-align:center; margin-top:2%; margin-bottom:1%;"><h4>Confirm exam <br>location</h4></div>
@@ -57,22 +65,36 @@
 			  
 			  <div id="confirm3" style="display: none; text-align:center; margin-bottom:1%; margin-top:1%;"><h3><?php echo $naziv; ?></h3></div> 
 
-<script>
-var loadFile = function(event) {
-	var image = document.getElementById('output');
-	image.src = URL.createObjectURL(event.target.files[0]);
-	
-	$("#file").hide();
-	$("#confirm").show();
-	$("#confirm2").show();
-	$("#confirm3").show();
-	$("#photo").show();
-};
-</script>
+				<script>
+				var loadFile = function(event) {
+					var image = document.getElementById('output');
+					image.src = URL.createObjectURL(event.target.files[0]);
+					
+					$("#file").hide();
+					$("#confirm").show();
+					$("#confirm2").show();
+					$("#confirm3").show();
+					$("#photo").show();
+				};
+				
+				$(document).ready(function(){
+					
+				$("#confirm2").click(function(){
+
+				$('#confirm').hide() 
+				$('#confirm2').hide() 
+				$('#confirm3').hide() 
+				$('#photo').hide() 
+				$("#preloader").show();
+				
+				});
+				
+				});
+				</script>
                             
                 </div>      
 			
-	</form>			
+				</form>			
                 <img src="data/source/icons/photo_hand.png" class="img-fluid" style="height:80%; margin-left:20%;">
                             
                 
