@@ -50,7 +50,7 @@
 			
 		}
 		else{
-			$pass_link='';
+			$pass_link='<div style="position:absolute; right:-2px; bottom:-2px;"><img src="data/source/icons/passed.png" class="img-fluid"></div>';
 		}
 	   ?>
         
@@ -84,7 +84,7 @@
 		if($fotografija!='')
 		{
 		?>
-		<a href="?page=galerija"><div style="float:<?php echo $foto_float; ?>; width:13%;"><img src="data/source/icons/photo.png" width="80%"></div></a>
+		<a href="?page=galerija&lokacija_id=<?php echo $id; ?>"><div style="float:<?php echo $foto_float; ?>; width:13%;"><img src="data/source/icons/photo.png" width="80%"></div></a>
 		<?php
 		}
 		?>
