@@ -45,15 +45,7 @@
 				foreach(array_slice($files,3,500) as $file) {
 				if($file!=".." & $file!="." & $file!="thumb"){
 
-				//thumb  
-				  
-				$thumb = explode("source/",$galerija_nova); 
-				list($otpadak,$folder)=$thumb; 
-
-				$thumb="http://www.radioslavonija.hr/data/thumbs/$folder/$file";
-			 
-				//kraj thumb
-			 
+				
 			 
 				echo'
 				<a data-lightbox="gallery-1" href="images/pictures/10t.jpg" title="<?php echo $galerija_path; ?>">
