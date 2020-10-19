@@ -5,7 +5,8 @@ $potkat=$_GET['potkat'];
 $country=$_GET['cat'];
 $lokacija_id=$_GET['lokacija_id'];
 $alert=$_GET['alert'];
-
+$prijava_lat=$_GET['lat'];
+$prijava_lang=$_GET['lang'];
 
 ?>
 <!DOCTYPE HTML>
@@ -81,6 +82,11 @@ include("include/footer.php");
 		   
 		   include("include/page/exam/add_photo.php");
 	   }
+	   if($page=='exam_confirm'){
+		   
+		   include("include/page/exam/exam_confirm.php");
+	   }
+	  
 	   ?>
 		
 		
