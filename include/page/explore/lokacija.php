@@ -44,7 +44,7 @@
 		
 		$status_num=mysqli_num_rows($result4);
 		
-		if($status_num <1)
+		if($status_num <1 || $user_num > 0)
 		{
 		$pass_link='<a href="?page=add_exam&lokacija_id='.$lokacija_id.'"><div style="position:absolute; right:-2px; bottom:-2px;"><img src="data/source/icons/pass.png" class="img-fluid"></div></a>';	
 			
@@ -52,6 +52,9 @@
 		else{
 			$pass_link='<div style="position:absolute; right:-2px; bottom:-2px;"><img src="data/source/icons/passed.png" class="img-fluid"></div>';
 		}
+		
+		
+		
 	   ?>
         
         <div class="card card-style" style="margin-top: 30%; position:relative;">
