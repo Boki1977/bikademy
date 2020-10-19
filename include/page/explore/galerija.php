@@ -31,13 +31,16 @@
 				<?php
 				$galerija_list = explode("data/",$galerija); 
 				list($otpadak,$galerija_path)=$galerija_list; 
-				$galerija_path="data/$galerija_path";
+				$galerija_path="../data/$galerija_path";
 				
 				
 				$directory = "$galerija_path";
 				$files = scandir ($directory);
 				$firstFile = "$directory/$files[2]";	
+				
+				
 				?>
+				
 				
 				<?php
 				$files = scandir(''.$galerija_path.'');
@@ -45,14 +48,18 @@
 				foreach(array_slice($files,3,500) as $file) {
 				if($file!=".." & $file!="." & $file!="thumb"){
 
-				
+				$thumb = explode("source/",$galerija_path); 
+				list($otpadak,$folder)=$thumb; 
+
+				$thumb="$image_path/data/thumbs/$folder/$file";
+				$full_file="$image_path/data/source/$folder/$file";
 			 
 				echo'
-				<a data-lightbox="gallery-1" href="images/pictures/10t.jpg" title="<?php echo $galerija_path; ?>">
-                        <img src="images/empty.png" data-src="images/pictures/10t.jpg" class="rounded-m preload-img shadow-l img-fluid" alt="img">
+				<a data-lightbox="gallery-1" href="'.$full_file.'" title="<?php echo $galerija_path; ?>">
+                        <img src="'.$thumb.'" data-src="'.$thumb.'" class="rounded-m preload-img shadow-l img-fluid" alt="img">
                         <div class="caption">
-                            <h4 class="color-theme">Messy Desk?</h4>
-                            <p>Some may consider this to be a very messy desk.</p>
+                      
+                            
                             <div class="divider bottom-0"></div>
                         </div>
                 </a>
