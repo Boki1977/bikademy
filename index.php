@@ -6,6 +6,7 @@ $country=$_GET['cat'];
 $lokacija_id=$_GET['lokacija_id'];
 $alert=$_GET['alert'];
 
+
 ?>
 <!DOCTYPE HTML>
 <html lang="en">
@@ -65,7 +66,21 @@ include("include/footer.php");
 		   include("include/page/explore/galerija.php");
 	   }
 	   
+	   if($page=='add_exam'){
+		   
+		   include("include/page/exam/add_exam.php");
+	   }
 	 
+	 
+		if($page=='add_on'){
+		   
+		   include("include/page/exam/add_exam.php");
+	   }
+	   
+	   if($page=='add_off'){
+		   
+		   include("include/page/exam/add_photo.php");
+	   }
 	   ?>
 		
 		
