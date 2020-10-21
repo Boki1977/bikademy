@@ -75,7 +75,7 @@ include("include/footer.php");
 	 
 		if($page=='add_on'){
 		   
-		   include("include/page/exam/add_exam.php");
+		   include("include/page/exam/on_location.php");
 	   }
 	   
 	   if($page=='add_off'){
