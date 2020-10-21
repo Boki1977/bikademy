@@ -2,7 +2,7 @@
 
         
         <div class="card card-style" style="margin-top: 30%; position:relative;">		
-		<a href="?page=add_on&lokacija_id=<?php echo $lokacija_id; ?>"><img src="data/source/icons/addon.png" class="img-fluid"></a>       
+		<a href="polaganje_lokacije.php?lokacija_id=<?php echo $lokacija_id; ?>"><img src="data/source/icons/addon.png" class="img-fluid"></a>       
         </div> 
 		
 		<div class="card card-style">		
