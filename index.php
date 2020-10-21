@@ -12,7 +12,13 @@ $prijava_lang=$_GET['lang'];
 <!DOCTYPE HTML>
 <html lang="en">
 <?php
+if($page!='add_on')
+{
 include("include/head.php");
+}
+else{
+include("include/head_polaganje.php");
+}
 ?>
     
 <body class="theme-light" data-highlight="blue2">
