@@ -44,15 +44,16 @@
 	
                 <div class="card card-style">
 				
-				<div class="d-flex justify-content-center id="preloader">
-                    <div class="spinner-border color-blue2-dark" role="status">
+				
+                    <div class="spinner-border color-blue2-dark"  style="margin-top:10%; margin-left:43%; display:none;" id="preload" role="status">
                         <span class="sr-only">Loading...</span>
                     </div>
-                </div>
+                
 				
 				
 				
-				<input type="file" class="upload-file" accept="image/*" name="image" id="file"  onchange="loadFile(event)">
+				<input type="file" class="upload-file" accept="image/*" name="image" id="file"  onchange="loadFile(event)" style="display: none;">
+				<label for="file" style="cursor: pointer;"><img src="data/source/icons/upload.png" id="image"></label></p>
                  <div id="confirm" style="display: none; text-align:center; margin-top:2%; margin-bottom:1%;"><h4>Confirm exam <br>location</h4></div>
                    
                 
@@ -71,6 +72,7 @@
 					image.src = URL.createObjectURL(event.target.files[0]);
 					
 					$("#file").hide();
+					$("#image").hide();
 					$("#confirm").show();
 					$("#confirm2").show();
 					$("#confirm3").show();
@@ -85,7 +87,8 @@
 				$('#confirm2').hide() 
 				$('#confirm3').hide() 
 				$('#photo').hide() 
-				$("#preloader").show();
+				$("#preload").show();
+				
 				
 				});
 				
