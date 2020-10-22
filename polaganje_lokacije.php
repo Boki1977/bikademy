@@ -8,13 +8,28 @@ $alert=$_GET['alert'];
 $prijava_lat=$_GET['lat'];
 $prijava_lang=$_GET['lang'];
 
+		$result = $con->query("
+		SELECT * FROM lokacija
+		WHERE id='$lokacija_id' 
+		");
+							
+		while ($obj=mysqli_fetch_object($result))
+		{  
+		
+		include ("include/libs/lokacija.php");
+		}
+
 ?>
 <!DOCTYPE HTML>
 <html lang="en">
 <?php
-
+if($page!='add_on')
+{
+include("include/head.php");
+}
+else{
 include("include/head_polaganje.php");
-
+}
 ?>
     
 <body class="theme-light" data-highlight="blue2">
@@ -40,16 +55,10 @@ include("include/footer.php");
 	  
 	   
 	   ?>
-        
-	        <div class="static-notification bg-blue-dark">
-                  <div id="dist_div" style="color: white;"></div>
-                    </div>  
-        
-        
-            <div id="dist_div"></div>
-            <div id="map-canvas"/>
-			
-			
+        	<div class="card card-style" style="margin-top: 30%;">
+                  <h4 style="text-align: center; margin-top:8%; margin-bottom:8%;"><?php echo $naziv; ?></h4>          
+			</div> 
+	  <iframe src="polaganje_lokacije_frame.php?lokacija_id=<?php echo $lokacija_id; ?>" frameBorder="0" onload="this.width=screen.width;this.height=screen.height;" title="IMap" style="margin-top:0%;"></iframe>
 		
 		   
 
