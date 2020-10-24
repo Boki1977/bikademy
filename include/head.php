@@ -15,4 +15,5 @@
   <script type="text/javascript"
           src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC71nuTEi8qYmFv2r3qdzKnFV4cCJe5Xe4vMI">
   </script>
+  <script type="text/javascript" src="scripts/jquery.js"></script>
 </head>

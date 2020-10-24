@@ -48,7 +48,9 @@
 		
 		?>
 
-				<div style="margin-top:35%;"></div>
+			<div class="card card-style" style="margin-top: 30%;">
+                  <h4 style="text-align: center; margin-top:8%; margin-bottom:8%;"><?php echo $naziv; ?></h4>          
+			</div> 
 	
 	
 

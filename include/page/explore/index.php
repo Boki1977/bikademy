@@ -16,10 +16,7 @@
 	   }
 	   
 	   
-	   if($country!='')
-	   {
-		   $and="AND kategorija_id=$country";
-	   }
+	  
 	   
 	   ?>
         
@@ -32,18 +29,12 @@
 		<div class="card card-style">
             <div class="content mb-0">        
            
-                
-                <script type="text/javascript">
-				function MM_jumpMenu(targ,selObj,restore){ //v3.0
-				  eval(targ+".location='"+selObj.options[selObj.selectedIndex].value+"'");
-				  if (restore) selObj.selectedIndex=0;
-				}
-				</script>
+              
 
                 <div class="input-style input-style-2 input-required">
                     <span class="input-style-1-active input-style-1-inactive">Select your county</span>
                     <em><i class="fa fa-check color-green1-dark"></i></em>
-                    <select data-plugin-selectTwo class="form-control" onChange="MM_jumpMenu('parent',this,0)">
+                    <select data-plugin-selectTwo class="form-control" id="select_c">
                         <option value="default" disabled="" selected="">Country list</option>
 						<?php                                      
 						$result = $con->query("
@@ -63,7 +54,7 @@
 						    $selection="";
 						}
 						?>
-                       <option value="?page=<?php echo $page; ?>&cat=<?php echo $id; ?>" <?php echo $selection; ?>><?php echo $naziv; ?></option>
+                       <option value="<?php echo $id; ?>"><?php echo $naziv; ?></option>
 					   
 					   <?php
 					   }
@@ -77,14 +68,13 @@
         </div>
 		
 	
+					<div id="potkategorija"></div>
 	
-	
-	
+					<div id="potkategorija_trenutna">
 					<?php                                      
 					$result = $con->query("
 					SELECT * FROM potkategorija
-					WHERE grad='$grad' 
-					$and
+					WHERE grad='$grad' 					
 					ORDER BY  naziv ASC
 					");
 					
@@ -104,18 +94,50 @@
 					} 
 					?>
 					
-				<a href="<?php echo $potkat_link; ?>">
-                <div class="card card-style" style="background-color:<?php echo $card_color; ?>;">
-                    <img src="<?php echo $fotka_potkat; ?>" class="img-fluid">
-                    <div class="content pb-1">
-                     <h5 style="color:white;"><?php echo $naziv; ?></h5>
-                    </div>          
-                </div>      
-				</a>
-            
-       
+					<a href="<?php echo $potkat_link; ?>">
+					<div class="card card-style" style="background-color:<?php echo $card_color; ?>;">
+						<img src="<?php echo $fotka_potkat; ?>" class="img-fluid">
+						<div class="content pb-1">
+						 <h5 style="color:white;"><?php echo $naziv; ?></h5>
+						</div>          
+					</div>      
+					</a>
 					<?php
 					}
 					?>
+					</div>
 					
+					
+					
+					<script type="text/javascript">
+					
+					$('#select_c').change(function(){
+
+					$("#potkategorija_trenutna").hide();
+					$('#potkategorija_trenutna').val("");
+					 var id = $(this).val();
+
+					$.post('potkat_list.php', {id: id},
+
+
+
+					function(data){
+
+
+					$("#potkategorija").html(data);
+
+					$("#potkategorija").hide();
+
+					$("#potkategorija").fadeIn('slow'); //Fade in the data given by the insert.php file
+
+
+					});
+
+					return false;
+
+
+
+					});
+
+					</script>
         

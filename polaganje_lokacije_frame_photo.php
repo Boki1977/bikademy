@@ -3,7 +3,9 @@
 <head>
 
 <?php
-include("dbh.php");
+include("login_check.php");
+if($user_num > 0)
+{
 $lokacija_id=$_GET['lokacija_id'];
 
 		$result = $con->query("
@@ -18,6 +20,8 @@ $lokacija_id=$_GET['lokacija_id'];
 		}
 		$geo = explode(",",$geo_lokacija); 
 list($lang,$lat)=$geo;   
+
+
 ?>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="apple-mobile-web-app-capable" content="yes">
@@ -31,6 +35,9 @@ list($lang,$lat)=$geo;
 <link rel="manifest" href="_manifest.json" data-pwa-version="set_in_manifest_and_pwa_js">
 <link rel="apple-touch-icon" sizes="180x180" href="app/icons/icon-192x192.png">
 
+   <script type="text/javascript" src="scripts/jquery.js"></script>
+				<script type="text/javascript" src="scripts/bootstrap.min.js"></script>
+				<script type="text/javascript" src="scripts/custom.js"></script>
 
  
 
@@ -45,7 +52,6 @@ list($lang,$lat)=$geo;
 							
 		while ($obj=mysqli_fetch_object($result))
 		{  
-		
 		include ("include/libs/lokacija.php");
 		}
 		
@@ -72,37 +78,44 @@ list($lang,$lat)=$geo;
 	top:1px;
 }
 
+#confirm_box{
+
+	display:none;
+
+}
         
  </style>
-				<div class="card card-style" style="margin-top: 30%;">
-                  <h4 style="text-align: center; margin-top:8%; margin-bottom:8%;"><?php echo $naziv; ?></h4>          
-			</div> 
-	
-	
-					
-				<form method="POST" enctype="multipart/form-data" action="?page=exam_confirm&lokacija_id=<?php echo $lokacija_id; ?>" id="formular">
+
+
+
+<div class="card card-style" id="confirm_box">
+
+<div class="spinner-border color-blue2-dark"  style="margin-top:5%; margin-bottom:5%; margin-left:43%" id="preload" role="status">
+                        <span class="sr-only">Loading...</span>
+                    </div>
+</div>
+		
+				<form method="POST" enctype="multipart/form-data" action="frame_exam_confirm.php?lokacija_id=<?php echo $lokacija_id; ?>" id="formular">
 	
                 <div class="card card-style">
 				
 				
-                    <div class="spinner-border color-blue2-dark"  style="margin-top:10%; margin-left:43%; display:none;" id="preload" role="status">
-                        <span class="sr-only">Loading...</span>
-                    </div>
+                    
 
 				
 				
 				<input type="file" class="upload-file" accept="image/*" name="image" id="file"  onchange="loadFile(event)" style="display: none;">
 				<label for="file" style="cursor: pointer;"><img src="data/source/icons/upload2.png" id="image"></label></p>
                  <div id="confirm" style="display: none; text-align:center; margin-top:2%; margin-bottom:1%;"><h4>Confirm exam <br>location</h4></div>
-                   
+                   	
                 
 				 <div style="position:relative;">
 				 <img id="output" width="50%" style="margin-left:25%;"/>
 				   <div id="photo" style="position:absolute; bottom:0; right:20%; display: none;"><img src="data/source/icons/check.png"></div>
 				 </div>
-			  
-			  <input type="submit" id="confirm2" name="posalji" class="myButton" style="display: none; width:50%; margin-left:25%; margin-top: 2%;" value="CLICK HERE TO CONFIRM">
-			  
+			  <div id="submit" onclick="myFunction()">
+			  <input type="submit" id="confirm2" name="posalji" class="myButton" style="display: none; width:50%; margin-left:25%; margin-top: 2%;" value="CLICK HERE TO CONFIRM" onclick="this.style.display='none';">
+			  </div>
 			  <div id="confirm3" style="display: none; text-align:center; margin-bottom:1%; margin-top:1%;"><h3><?php echo $naziv; ?></h3></div> 
 
 				<script>
@@ -116,49 +129,31 @@ list($lang,$lat)=$geo;
 					$("#confirm2").show();
 					$("#confirm3").show();
 					$("#photo").show();
+					
+
 				};
 				
 				$(document).ready(function(){
 					
 				$("#confirm2").click(function(){
 
-				$('#confirm').hide() 
-				$('#confirm2').hide() 
-				$('#confirm3').hide() 
-				$('#photo').hide() 
-				$("#preload").show();
+				$('#confirm_box').show() 
+				$("#formular").hide();
 				
 				
 				});
 				
 				});
+				
 				</script>
                             
                 </div>      
 			
-				</form>			
-                <img src="data/source/icons/photo_hand.png" class="img-fluid" style="height:80%; margin-left:20%;">
-                            
-                
-        
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+				</form>		
+			
+                <img src="data/source/icons/photo_hand.png" class="img-fluid" id="hand" style="height:80%; margin-left:20%;">
+              
+				
+				<?php
+				}
+				?>

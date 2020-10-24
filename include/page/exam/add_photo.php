@@ -34,23 +34,29 @@
 	top:1px;
 }
 
-        
+      #confirm_box{
+
+	display:none;
+
+}  
  </style>
 				<div class="card card-style" style="margin-top: 30%;">
                   <h4 style="text-align: center; margin-top:8%; margin-bottom:8%;"><?php echo $naziv; ?></h4>          
 			</div> 
 	
-	
+	<div class="card card-style" id="confirm_box">
+
+<div class="spinner-border color-blue2-dark"  style="margin-top:5%; margin-bottom:5%; margin-left:43%" id="preload" role="status">
+                        <span class="sr-only">Loading...</span>
+                    </div>
+</div>
 					
 				<form method="POST" enctype="multipart/form-data" action="?page=exam_confirm&lokacija_id=<?php echo $lokacija_id; ?>" id="formular">
 	
                 <div class="card card-style">
 				
 				
-                    <div class="spinner-border color-blue2-dark"  style="margin-top:10%; margin-left:43%; display:none;" id="preload" role="status">
-                        <span class="sr-only">Loading...</span>
-                    </div>
-
+                   
 				
 				
 				<input type="file" class="upload-file" accept="image/*" name="image" id="file"  onchange="loadFile(event)" style="display: none;">
@@ -80,15 +86,12 @@
 					$("#photo").show();
 				};
 				
-				$(document).ready(function(){
+					$(document).ready(function(){
 					
 				$("#confirm2").click(function(){
 
-				$('#confirm').hide() 
-				$('#confirm2').hide() 
-				$('#confirm3').hide() 
-				$('#photo').hide() 
-				$("#preload").show();
+				$('#confirm_box').show() 
+				$("#formular").hide();
 				
 				
 				});

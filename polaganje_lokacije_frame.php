@@ -3,7 +3,9 @@
 <head>
 
 <?php
-include("dbh.php");
+include("login_check.php");
+if($user_num > 0)
+{
 $lokacija_id=$_GET['lokacija_id'];
 
 		$result = $con->query("
@@ -23,7 +25,7 @@ list($lang,$lat)=$geo;
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, viewport-fit=cover" />
-<title>Azures BootStrap</title>
+<title></title>
 <link rel="stylesheet" type="text/css" href="styles/bootstrap.css">
 <link rel="stylesheet" type="text/css" href="styles/style.css">
 <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900|Roboto:300,300i,400,400i,500,500i,700,700i,900,900i&amp;display=swap" rel="stylesheet">
@@ -125,9 +127,11 @@ var clng;
 	
 	distanc = Math.round(distanc * 100) / 100
 	if(distanc < .500){
-     document.location = "https://www.bikeapp.info/demo/polaganje_lokacije_frame_photo.php?lokacija_id=<?php echo $lokacija_id; ?>";
+		 document.location = "https://www.bikeapp.info/demo/polaganje_lokacije_frame_photo.php?lokacija_id=<?php echo $lokacija_id; ?>&";
 		}else{
-		document.getElementById("dist_div").innerHTML = "You are " + distanc + " kilometars from Exam.<br> When You reach <?php echo $radius; ?> m from Exam, You could take an Exam.<p>";	
+			
+			document.getElementById("dist_div").innerHTML = "You are " + distanc + " kilometars from Exam.<br> When You reach <?php echo $radius; ?> m from Exam, You could take an Exam.<p>";
+     
 		}
 	
     var request = {
@@ -184,59 +188,18 @@ function deg2rad(deg) {
 
 </head>
 
-<body class="dual-sidebar"> 
+<body> 
 
 
-            
-<div class="all-elements">
-    <div class="snap-drawers">
- 
-
-
-
-        <div id="content" class="snap-content">
-          
-            
-            <div class="content">
-
-            <div class="static-notification bg-blue-dark">
-                  <div id="dist_div"></div>
-                    </div>  
-        
-        
-            <div id="dist_div"></div>
-            <div id="map-canvas"/>
+            <div id="dist_div" style="margin-bottom:5%; margin-top:1%; margin-left:5%; margin-right:5%;"></div>
+            <div id="map-canvas"style="margin-top:5%; margin-left:5%; margin-right:5%;"/>
            
             
-                
-            </div>
-        </div>
-    </div>  
 
-</div>
-    
     
 
     
 </body>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+<?php
+}
+?>
