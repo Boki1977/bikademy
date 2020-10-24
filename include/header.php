@@ -49,7 +49,15 @@
 		{  
 		$potkategorija_naziv=($obj2->naziv);
 		}	
-		}			
+		}
+
+
+		if($page=="indeks_user"){
+			
+		//provjerava kategoriju (je li grad ili regija )
+		$cat=$_GET['cat'];
+			
+		}
 			
 		$margin_logo="margin-left:23%;";	
 	   ?>
@@ -77,10 +85,17 @@
 		{
 		?>
 		<div class="" style="margin-left:5%; margin-top:10%;">
-          <h3 style="color:white;"><?php echo $potkategorija_naziv; ?></h3>
-                       
+          <h3 style="color:white;"><?php echo $potkategorija_naziv; ?></h3>                       
         </div>
 		<?php
+		}
+		if($page=='indeks_user')
+		{		
+		?>
+		<div class="" style="margin-left:5%; margin-top:10%;">
+          <h3 style="color:white;">INDEKS | </h3>                       
+        </div>
+		<?php 
 		}
 		?>
 		      </div>

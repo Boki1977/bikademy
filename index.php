@@ -16,9 +16,7 @@ if($page!='add_on')
 {
 include("include/head.php");
 }
-else{
-include("include/head_polaganje.php");
-}
+
 ?>
     
 <body class="theme-light" data-highlight="blue2">
@@ -91,6 +89,11 @@ include("include/footer.php");
 	   if($page=='exam_confirm'){
 		   
 		   include("include/page/exam/exam_confirm.php");
+	   }
+	  
+	  if($page=='indeks_user'){
+		   
+		   include("include/page/indeks_user/index.php");
 	   }
 	  
 	   ?>

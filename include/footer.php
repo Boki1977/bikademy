@@ -9,7 +9,7 @@ if($user_num < 1)
 else{
 	
 	$add_link='href="index.php?page=add_exam"';
-	$index_link='href="index.php?page=index"';
+	$index_link='href="index.php?page=indeks_user"';
 	$profile_link='href="index.php?page=profile"';
 }
 ?>
