@@ -1,8 +1,7 @@
 
        <?php
-	   $country=$_GET['cat'];
-	   
-	   
+
+	  	   
 	   //ukoliko je city povlači sve potkategorije koje imaju grad 1, u suprotnom 0
 	   if($page=='explore_city'){
 		   $grad=1;

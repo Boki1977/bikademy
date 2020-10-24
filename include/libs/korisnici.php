@@ -16,4 +16,13 @@ $k_kod_korisnika =($obj->kod_korisnika);
 $k_fotka =($obj->fotka);
 
 
+if($k_fotka==''){
+	
+	$k_fotka="$image_path/demo/data/source/icons/user.jpg";
+}
+
+else{
+	$k_fotka==$k_fotka;
+}
+
 ?>

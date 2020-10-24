@@ -58,6 +58,19 @@
 		$cat=$_GET['cat'];
 			
 		}
+		if(strpos($page, 'study_regions') !== false){
+		   
+		 $grad=$_GET['reg'];
+		 
+		 if($grad==0)
+		 {
+			 $grad_naziv="Regions";
+		 }
+		 else{
+			 $grad_naziv="Cities";
+		 }
+		 
+		}
 			
 		$margin_logo="margin-left:23%;";	
 	   ?>
@@ -93,9 +106,21 @@
 		{		
 		?>
 		<div class="" style="margin-left:5%; margin-top:10%;">
-          <h3 style="color:white;">INDEKS | </h3>                       
+          <h3 style="color:white;">INDEKS | #CycleYourExams</h3>                       
         </div>
 		<?php 
 		}
+		
+		if(strpos($page, 'study_regions') !== false){
 		?>
+		
+		<div class="" style="margin-left:5%; margin-top:10%;">
+          <h3 style="color:white;">INDEKS | <?php echo $grad_naziv; ?></h3>                       
+        </div>
+		
+		<?php
+		}
+		?>
+		
+		
 		      </div>

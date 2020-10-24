@@ -91,11 +91,14 @@ include("include/footer.php");
 		   include("include/page/exam/exam_confirm.php");
 	   }
 	  
-	  if($page=='indeks_user'){
+		if($page=='indeks_user'){
 		   
 		   include("include/page/indeks_user/index.php");
 	   }
-	  
+	  if(strpos($page, 'study_regions') !== false){
+		   
+		   include("include/page/indeks_user/study_regions.php");
+	   }
 	   ?>
 		
 		
