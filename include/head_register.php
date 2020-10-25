@@ -24,22 +24,16 @@ include ("include/page/user/insert.php");
 <link rel="apple-touch-icon" sizes="180x180" href="app/icons/icon-192x192.png">
 
 <?php
-if($kcheck_num<1 && $ime!='' && $prezime !='' && $lozinka!= '' && $email !='') { 
+if($kcheck_num<1 && $ime!='' && $prezime !='' && $lozinka!= '' && $email2 !='') 
+{ 
 ?>
-
 <script type="text/javascript">
 document.location = "index.php?alert=register_on";
 </script>
-
-
 <?php
 }
-?>
-
-
-
-<?php
-if($kcheck_num>0 || $ime!='' || $prezime !='' || $lozinka!= '' || $email !='') { 
+else
+{
 ?>
 <script type="text/javascript">
 document.location = "index.php?alert=register_off";

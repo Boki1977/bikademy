@@ -7,7 +7,8 @@ $drzava=$_POST['drzava'];
 $mjesto=$_POST['mjesto'];
 $datum_rodjenja=$_POST['datum_rodjenja'];
 
-
+// iz nekog razloga nakon insert.php skripte ne pojavljuje se email
+$email2=$email;
 
 
 if( isset($_POST['lozinka']) )

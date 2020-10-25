@@ -1,6 +1,7 @@
 
   
   <?php
+  $rb=0;
 
   $doc = new DOMDocument();
   $doc->load( 'https://bikademy.com/category/bike-interview/feed/' );
@@ -28,12 +29,19 @@
 	list($fotka,$otpadak)=$fotka_nova;
 
 
-
+$rb++;
   
 ?>
 
 			<div class="item">
+			<?php
+			if($rb==1)
+			{
+			?>
                <div class="new_post"><img src="data/source/icons/new_post.png"></div>
+			 <?php
+			}
+			?>
                     <img src="<?php echo $fotka; ?>" class="rounded-m" width="200" height="100">
                    
                         <a href="<?php echo $link; ?>" target="_blank"><h6><?php echo $title; ?></h6></a>

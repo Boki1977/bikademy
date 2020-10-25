@@ -13,12 +13,12 @@
         </div> 
        </a>
 		
-
+		<a href="?page=about">
          <div class="card card-style">
             <img src="data/source/bg/about.jpg" class="img-fluid">
                        
         </div>
-
+		</a>
 		<div class="content">
                 <h5>Bikademy News</h5>
                 
