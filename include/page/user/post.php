@@ -17,7 +17,16 @@ $lozinka=$_POST['lozinka'];
 $lozinka = md5( $lozinka );
 }
 
-?>
+// pregled ima li korisnika s ovim imenom   
+                                    
+$result = $con->query("
 
+SELECT * FROM  korisnici
+WHERE email='$email' 
 
-    	
+");
+
+$kcheck_num=mysqli_num_rows($result);
+
+	
+?>  	
