@@ -2,7 +2,7 @@
 
 include ("include/page/user/post.php");
 
-if($kcheck_num<1) { 
+if($kcheck_num<1 && $ime!='' && $prezime !='' && $lozinka!= '' && $email !='') { 
 
 include ("include/page/user/insert.php");
   	
@@ -24,7 +24,7 @@ include ("include/page/user/insert.php");
 <link rel="apple-touch-icon" sizes="180x180" href="app/icons/icon-192x192.png">
 
 <?php
-if($kcheck_num<1) { 
+if($kcheck_num<1 && $ime!='' && $prezime !='' && $lozinka!= '' && $email !='') { 
 ?>
 
 <script type="text/javascript">
@@ -39,7 +39,7 @@ document.location = "index.php?alert=register_on";
 
 
 <?php
-if($kcheck_num>0) { 
+if($kcheck_num>0 || $ime!='' || $prezime !='' || $lozinka!= '' || $email !='') { 
 ?>
 <script type="text/javascript">
 document.location = "index.php?alert=register_off";
