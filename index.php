@@ -104,6 +104,12 @@ include("include/footer.php");
 		   
 		   include("include/page/user/profile.php");
 	   }
+	   
+	   
+	    if($page=='registracija'){
+		   
+		   include("include/page/user/registracija.php");
+	   }
 	   ?>
 		
 		
