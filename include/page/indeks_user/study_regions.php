@@ -25,6 +25,37 @@
 			$indeks_id =($obj->id);
 			$study_naziv =($obj->naziv);
 			
+			//broj položenih ispita
+			
+			$result_num = $con->query("
+			SELECT * FROM indeks
+			WHERE kod_korisnika='$k_kod_korisnika' 					
+			AND id_potkategorija ='$indeks_id'				
+			");
+			
+			$total=mysqli_num_rows($result_num);
+			
+			$result_num_status = $con->query("
+			SELECT * FROM indeks
+			WHERE kod_korisnika='$k_kod_korisnika' 					
+			AND id_potkategorija ='$indeks_id'		
+			AND status_polaganja='1'
+			");
+			
+			$polozeno=mysqli_num_rows($result_num_status);
+			
+			
+			$razlika=$total-$polozeno;
+			
+			if($razlika>0)
+			{
+				$info="For finishing this Study, you need to pass <b>$razlika</b> more exams. <i class='far fa-times-circle' style='color: red;'></i>";
+			}
+			if($razlika<1)
+			{
+				$info="Congratulations! You have successfully passed this exam. Claim Your reward!";
+			}
+			
 			?>
                 <div class="mb-0">
                     <button class="btn accordion-btn border-0" data-toggle="collapse" data-target="#collapse<?php echo $indeks_id; ?>">
@@ -62,16 +93,29 @@
 						$exam_status =($obj3->status_polaganja);
 						
 						$rb++;
+						if($exam_status==1)
+						{
+							
+							$status='<i class="fas fa-check-circle" style="color: green;"></i>';
+						}
+						if($exam_status==0)
+						{
+							$status='<i class="far fa-times-circle" style="color: red;"></i>';
+						}
+						
+						
 						
 						?>
 							<tr>
 								<th scope="row"><?php echo $rb; ?></th>
 								<td class="color-green1-dark"><?php echo $exam_naziv; ?></td>
-								<td><?php echo $exam_status; ?></td>
+								<td><?php echo $status; ?></td>
 							</tr>
 												
 						<?php
 						}
+						
+						echo $info;
 						?>
                          
 						</tbody>

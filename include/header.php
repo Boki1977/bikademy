@@ -1,4 +1,4 @@
- <div class="header">
+ <div class="header" style="padding-bottom:50%;">
        
 	   <?php
 	   
@@ -10,6 +10,27 @@
 	   if($alert=='sucesslogin')
 	   {
 		   include("include/page/alert/login_yes.php");
+	   }
+	   
+	   
+	    if($alert=='register_on')
+	   {
+		   include("include/page/alert/register_yes.php");
+	   }
+	   
+	    if($alert=='register_off')
+	   {
+		   include("include/page/alert/register_no.php");
+	   }
+	   
+	    if($alert=='logout')
+	   {
+		   include("include/page/alert/logout.php");
+	   }
+	   
+	    if($alert=='password_change')
+	   {
+		   include("include/page/alert/password.php");
 	   }
 	   
 	  //ukoliko je city povlači sve potkategorije koje imaju grad 1, u suprotnom 0
@@ -122,5 +143,18 @@
 		}
 		?>
 		
+		<?php
+		if($page=='profile')
+		{
+		?>
+		<div class="" style="margin-left:5%; margin-top:10%;">
+		 <div class="row mt-3 pt-1 mb-3">
+          <div class="col-3"><img src="<?php echo $k_fotka; ?>" class="img-fluid" style="padding-left:2%; border-radius: 50%;"></div>                    
+		<div class="col-8"><h3><?php echo "$k_ime"; ?></h3></div>                       
+        </div>
+        </div>
+		<?php
+		}
+		?>
 		
 		      </div>

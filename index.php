@@ -99,6 +99,11 @@ include("include/footer.php");
 		   
 		   include("include/page/indeks_user/study_regions.php");
 	   }
+	   
+	   if($page=='profile'){
+		   
+		   include("include/page/user/profile.php");
+	   }
 	   ?>
 		
 		
