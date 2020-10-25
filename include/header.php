@@ -155,6 +155,14 @@
         </div>
 		<?php
 		}
+		if($page=='about')
+		{		
+		?>
+		<div class="" style="margin-left:5%; margin-top:10%;">
+          <h3 style="color:white;">ABOUT</h3>                       
+        </div>
+		<?php 
+		}
 		?>
 		
 		      </div>

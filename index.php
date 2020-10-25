@@ -46,6 +46,13 @@ include("include/footer.php");
 	   <?php
 	   //rutiranje
 	   
+	   
+	   if($page=='about'){
+		   
+		   include("include/page/index/about.php");
+	   }
+	   
+	   
 	   if($page==''){
 		   
 		   include("include/page/index/index.php");
