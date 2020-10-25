@@ -22,7 +22,7 @@
                 <input type="password" name="lozinka" placeholder="Enter password">
             </div>        
             <p class="text-center pb-0 mb-n1 pt-1">
-                <a href="index.php?page=registracija" data-menu="menu-sign2" class="text-center font-11 color-gray2-dark">Not Registered? Register Here.</a>
+                <a href="index.php?page=registracija"  class="text-center font-11 color-gray2-dark">Not Registered? Register Here.</a>
             </p>
             <button type="submit" class="btn btn-full btn-m shadow-l rounded-s text-uppercase font-900 bg-blue2-dark mt-4"></i>Log in</button>
         </div>

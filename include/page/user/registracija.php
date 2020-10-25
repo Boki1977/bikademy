@@ -1,7 +1,6 @@
 <form id="registrationForm" method="post" action="register.php">
-<div id="menu-sign2" class="menu menu-box-bottom menu-box-detached rounded-m" 
-         data-menu-height="570" 
-         data-menu-effect="menu-over">
+<div class="card card-style" style="margin-top: 30%;">
+
         <div class="content mb-0">
             <h3 class="font-700 mb-0">Personal information</h3>
           
@@ -44,4 +43,4 @@
             <button type="submit" class="btn btn-full btn-m shadow-l rounded-s text-uppercase font-900 bg-blue2-dark mt-4"></i>Register</button>
         </div>
     </div>
-	</form>
+
