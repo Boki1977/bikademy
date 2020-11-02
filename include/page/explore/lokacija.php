@@ -117,7 +117,9 @@
          <div style="margin-left:5%; margin-right:5%; margin-top:5%">
 		<?php echo $opis; ?>
 		 </div>		 
-       
+       <div style="margin-left:5%; margin-right:5%; margin-top:5%">
+		<img src="<?php echo $image_path; ?>/demo/data/source/giant.png" width="89%">
+		 </div>	
 					
          <div id="menu-video" class="menu menu-box-modal rounded-m" data-menu-width="95%">
         <div class='responsive-iframe max-iframe'><iframe src='https://www.youtube.com/embed/<?php echo $video; ?>' frameborder='0' allowfullscreen></iframe></div>
