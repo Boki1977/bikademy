@@ -24,5 +24,11 @@ After passing every exam of certain Study – You get reward<br>
 
 You can pass exams randomly<br>
                        
+
+Clarus Agency<br>
+WEB: <a href="http://www.bikademy.com" target="_blank">www.bikademy.com</a>
+MAIL: ride@bikademy.com<br>
+
+<img src="<?php echo $image_path; ?>/demo/data/source/giant.png" width="95%">
         </div> 
 		
