@@ -117,7 +117,7 @@
          <div style="margin-left:5%; margin-right:5%; margin-top:5%">
 		<?php echo $opis; ?>
 		 </div>		 
-       <div style="margin-left:5%; margin-right:5%; margin-top:5%">
+       <div style="margin-left:5%; margin-right:5%; margin-top:0%">
 		<img src="<?php echo $image_path; ?>/demo/data/source/giant.png" width="89%">
 		 </div>	
 					
