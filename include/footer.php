@@ -12,12 +12,26 @@ else{
 	$index_link='href="index.php?page=indeks_user"';
 	$profile_link='href="index.php?page=profile"';
 }
+
+
+if($page=='')
+{
+	$home_active='class="active-nav"';
+}
+if($page=='indeks_user')
+{
+	$index_active='class="active-nav"';
+}
+if($page=='profile')
+{
+	$profile_active='class="active-nav"';
+}
 ?>
 
 <div id="footer-bar" class="footer-bar-5">
-<a href="index.php" class="active-nav"><img src="data/source/icons/home.png"></a>
-<a <?php echo $index_link; ?>><img src="data/source/icons/index.png"></a>
-<a <?php echo $profile_link; ?>><img src="data/source/icons/profile.png"></a>
+<a href="index.php" <?php echo $home_active; ?>><img src="data/source/icons/home.png"></a>
+<a <?php echo $index_link; ?> <?php echo $index_active; ?>><img src="data/source/icons/index.png"></a>
+<a <?php echo $profile_link; ?> <?php echo $profile_active; ?>><img src="data/source/icons/profile.png"></a>
 </div>
 
 <?php

@@ -45,7 +45,7 @@ $rb++;
 			 <?php
 			}
 			?>
-                    <img src="<?php echo $fotka; ?>" class="img-fluid rounded-m" style="max-height: 150px;">
+                    <a href="<?php echo $link; ?>" target="_blank"><img src="<?php echo $fotka; ?>" class="img-fluid rounded-m" style="max-height: 150px;"></a>
                    
                         <a href="<?php echo $link; ?>" target="_blank"><h6><?php echo $title; ?></h6></a>
                             

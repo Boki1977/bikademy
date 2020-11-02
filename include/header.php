@@ -127,7 +127,7 @@
 		{		
 		?>
 		<div class="" style="margin-left:5%; margin-top:10%;">
-          <h3 style="color:white;">INDEKS | #CycleYourExams</h3>                       
+          <h3 style="color:white;">INDEX | #CycleYourExams</h3>                       
         </div>
 		<?php 
 		}
@@ -136,7 +136,7 @@
 		?>
 		
 		<div class="" style="margin-left:5%; margin-top:10%;">
-          <h3 style="color:white;">INDEKS | <?php echo $grad_naziv; ?></h3>                       
+          <h3 style="color:white;">INDEX | <?php echo $grad_naziv; ?></h3>                       
         </div>
 		
 		<?php

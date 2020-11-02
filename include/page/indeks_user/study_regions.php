@@ -77,7 +77,7 @@
 						<tbody>
 						<?php			                                    
 						$result3 = $con->query("
-						SELECT  a.naziv, b.status_polaganja					
+						SELECT  a.id, a.naziv, b.status_polaganja					
 						FROM lokacija a 
 						INNER JOIN indeks b 
 						ON b.kod_lokacije = a.kod_lokacije
@@ -89,6 +89,7 @@
 						while ($obj3=mysqli_fetch_object($result3))
 						{ 
 						
+						$exam_id =($obj3->id);
 						$exam_naziv =($obj3->naziv);
 						$exam_status =($obj3->status_polaganja);
 						
@@ -97,10 +98,13 @@
 						{
 							
 							$status='<i class="fas fa-check-circle" style="color: green;"></i>';
+							$link='';
+						
 						}
 						if($exam_status==0)
 						{
 							$status='<i class="far fa-times-circle" style="color: red;"></i>';
+							$link='?page=add_exam&lokacija_id='.$exam_id.'';
 						}
 						
 						
@@ -108,7 +112,9 @@
 						?>
 							<tr>
 								<th scope="row"><?php echo $rb; ?></th>
-								<td class="color-green1-dark"><?php echo $exam_naziv; ?></td>
+								
+								<td class="color-green1-dark"><?php if($status==0){ ?><a href="<?php echo $link; ?>"><?php } ?><?php echo $exam_naziv; ?><?php if($status==0){ ?></a><?php } ?></td>
+								
 								<td><?php echo $status; ?></td>
 							</tr>
 												

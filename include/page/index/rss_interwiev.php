@@ -42,7 +42,7 @@ $rb++;
 			 <?php
 			}
 			?>
-                    <img src="<?php echo $fotka; ?>" class="rounded-m" width="200" height="100">
+                   <a href="<?php echo $link; ?>" target="_blank"> <img src="<?php echo $fotka; ?>" class="rounded-m" width="200" height="100"></a>
                    
                         <a href="<?php echo $link; ?>" target="_blank"><h6><?php echo $title; ?></h6></a>
                             

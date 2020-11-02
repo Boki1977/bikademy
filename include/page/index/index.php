@@ -54,23 +54,29 @@
             </div>	
 		 
 		<div class="double-slider owl-carousel owl-no-dots">
+		<?php
+	      
+		$result = $con->query("
+		SELECT * FROM lokacija
+		ORDER BY RAND () LIMIT 5
+		");
+							
+		while ($obj=mysqli_fetch_object($result))
+		{  
 		
-            <div class="item">
+		include ("include/libs/lokacija.php");
+	
+		
+		?>
+        <div class="item">
                
-                    <img src="http://bikeapp.info/data/source/lokacije/hrvatska/osjecko_baranjska/drzavna_ergela_djakovo/DrzavnaErgelaLipicanaca_017.jpg" class="img-fluid rounded-m">
-                   
-                        <a href="">The Djakovo Studfarm</a>
-                            
-                      
-            </div>
-            <div class="item">
-               
-                    <img src="http://bikeapp.info/data/source/lokacije/hrvatska/osjecko_baranjska/tvrdja_osijek/Tvrdja_Osijek_02.jpg" class="img-fluid rounded-m">
-                    
-                       Osijek’s Tvrdja
-                               
-                     
-            </div>
+		<a href="<?php echo $lokacija_link; ?>"><img src="<?php echo $thumb; ?>" class="img-fluid rounded-m"></a>  
+		<a href="<?php echo $lokacija_link; ?>"><?php echo $naziv; ?></a>         
+		</div>
+           
+		 <?php
+		}
+		?>		
         </div>  
 		
 		
