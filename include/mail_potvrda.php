@@ -7,7 +7,7 @@ $headers = "MIME-Version: 1.0" . "\r\n";
 $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
 
 // More headers
-$headers .= 'From: <info@academi.bike>' . "\r\n";
+$headers .= 'From: <ride@bikademy.com>' . "\r\n";
 
 
 
@@ -29,7 +29,7 @@ oštovani, ova poruka je automatska i nemojte na nju odgovarati  <p>
 ';
 
 
-mail('info@academi.bike', $m1, $poruka2,$headers);
+mail('ride@bikademy.com', $m1, $poruka2,$headers);
 mail($k_email, $m1, $poruka1,$headers);
 mail('bpredmer@gmail.com', $m1, $poruka2,$headers);
 
