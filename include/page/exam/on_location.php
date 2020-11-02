@@ -6,4 +6,4 @@
             <div id="dist_div"></div>
             <div id="map-canvas"/>
 			
-			
+			<?php echo $lat; ?>

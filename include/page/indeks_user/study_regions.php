@@ -98,7 +98,6 @@
 						{
 							
 							$status='<i class="fas fa-check-circle" style="color: green;"></i>';
-							$link='';
 						
 						}
 						if($exam_status==0)
